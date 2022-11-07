@@ -1,9 +1,59 @@
 ﻿@page "/"
+@inject HttpClient http
 
-<PageTitle>Index</PageTitle>
+<h3>Autocomplete Demo</h3>
 
-<h1>Hello, world!</h1>
+<div class="autocomplete w-25">
+    <input @bind=selectedCustomerName @oninput=HandleInput class="form-control filter" />
+    @if (customers is not null)
+    {
+        <ul class="options">
+            @if (customers.Any())
+            {
+                @foreach (var customer in customers)
+                {
+                    <li class="option" @onclick=@(_ => SelectCustomer(customer.CustomerId))>
+                        <span class="option-text">@customer.CompanyName</span>
+                    </li>
+                }
+            }
+            else
+            {
+                <li class="disabled option">No results</li>
+            }
+        </ul>
+    }
+</div>
+@if (!string.IsNullOrWhiteSpace(selectedCustomerName))
+{
+    <p class="mt-3">
+        Selected customer is @selectedCustomerName with ID <strong>@selectedCustomerId</strong>
+    </p>
+}
+@code {
+    List<Customer>? customers;
+    string? selectedCustomerId;
+    string? selectedCustomerName;
+    string? filter;
 
-Welcome to your new app.
+    async Task HandleInput(ChangeEventArgs e)
+    {
+        filter = e.Value?.ToString();
+        if (filter?.Length > 2)
+        {
+            customers = await http.GetFromJsonAsync<List<Customer>>($"/api/companyfilter?filter={filter}");
+        }
+        else
+        {
+            customers = null;
+            selectedCustomerName = selectedCustomerId = null;
+        }
+    }
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+    void SelectCustomer(string id)
+    {
+        selectedCustomerId = id;
+        selectedCustomerName = customers!.First(c => c.CustomerId.Equals(selectedCustomerId)).CompanyName;
+        customers = null;
+    }
+}

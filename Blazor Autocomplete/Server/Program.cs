@@ -1,4 +1,8 @@
+using Blazor_Autocomplete.Server.Data;
+using Blazor_Autocomplete.Server.Services;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.ResponseCompression;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,7 +10,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
-
+builder.Services.AddDbContext<NorthwindContext>(options => options.UseSqlite(builder.Configuration.GetConnectionString("Northwind")));
+builder.Services.AddScoped<ICustomerManager, CustomerManager>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -32,5 +37,7 @@ app.UseRouting();
 app.MapRazorPages();
 app.MapControllers();
 app.MapFallbackToFile("index.html");
-
+app.MapGet("/api/companyfilter", async (string filter, [FromServices] ICustomerManager manager) =>
+    Results.Ok(await manager.GetFilteredCustomerNames(filter))
+);
 app.Run();
