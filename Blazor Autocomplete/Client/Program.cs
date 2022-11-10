@@ -1,4 +1,4 @@
-using Blazor_Autocomplete.Client;
+using BlazorAutocomplete.Client;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 

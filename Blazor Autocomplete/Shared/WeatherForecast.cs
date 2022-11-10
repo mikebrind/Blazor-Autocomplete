@@ -1,4 +1,4 @@
-namespace Blazor_Autocomplete.Shared;
+namespace BlazorAutocomplete.Shared;
 
 public class WeatherForecast
 {

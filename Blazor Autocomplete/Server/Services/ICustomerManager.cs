@@ -1,6 +1,6 @@
-﻿using Blazor_Autocomplete.Shared;
+﻿using BlazorAutocomplete.Shared;
 
-namespace Blazor_Autocomplete.Server.Services;
+namespace BlazorAutocomplete.Server.Services;
 
 public interface ICustomerManager
 {

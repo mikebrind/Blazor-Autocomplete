@@ -1,5 +1,5 @@
-using Blazor_Autocomplete.Server.Data;
-using Blazor_Autocomplete.Server.Services;
+using BlazorAutocomplete.Server.Data;
+using BlazorAutocomplete.Server.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;

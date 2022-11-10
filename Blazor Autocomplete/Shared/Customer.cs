@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Blazor_Autocomplete.Shared
+﻿namespace BlazorAutocomplete.Shared
 {
     public partial class Customer
     {
-        public Customer()
-        {
-            Orders = new HashSet<Order>();
-        }
-
         public string CustomerId { get; set; } = null!;
         public string CompanyName { get; set; } = null!;
         public string? ContactName { get; set; }
@@ -22,6 +14,5 @@ namespace Blazor_Autocomplete.Shared
         public string? Phone { get; set; }
         public string? Fax { get; set; }
 
-        public virtual ICollection<Order> Orders { get; set; }
     }
 }

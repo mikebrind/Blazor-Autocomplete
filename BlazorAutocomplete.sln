@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33027.239
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor Autocomplete.Server", "Blazor Autocomplete\Server\Blazor Autocomplete.Server.csproj", "{D0BC49C2-610D-4502-9492-50873B02ECC8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorAutocomplete.Server", "Blazor Autocomplete\Server\BlazorAutocomplete.Server.csproj", "{D0BC49C2-610D-4502-9492-50873B02ECC8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor Autocomplete.Client", "Blazor Autocomplete\Client\Blazor Autocomplete.Client.csproj", "{0018FAE7-E7B7-4F34-AC15-E8AB5D5ADA79}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorAutocomplete.Client", "Blazor Autocomplete\Client\BlazorAutocomplete.Client.csproj", "{0018FAE7-E7B7-4F34-AC15-E8AB5D5ADA79}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor Autocomplete.Shared", "Blazor Autocomplete\Shared\Blazor Autocomplete.Shared.csproj", "{8907B1E1-A90D-4A3F-B0AB-87D485B677E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorAutocomplete.Shared", "Blazor Autocomplete\Shared\BlazorAutocomplete.Shared.csproj", "{8907B1E1-A90D-4A3F-B0AB-87D485B677E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

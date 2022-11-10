@@ -1,8 +1,8 @@
-﻿using Blazor_Autocomplete.Server.Data;
-using Blazor_Autocomplete.Shared;
+﻿using BlazorAutocomplete.Server.Data;
+using BlazorAutocomplete.Shared;
 using Microsoft.EntityFrameworkCore;
 
-namespace Blazor_Autocomplete.Server.Services;
+namespace BlazorAutocomplete.Server.Services;
 
 public class CustomerManager : ICustomerManager
 {

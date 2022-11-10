@@ -1,7 +1,7 @@
-using Blazor_Autocomplete.Shared;
+using BlazorAutocomplete.Shared;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Blazor_Autocomplete.Server.Controllers;
+namespace BlazorAutocomplete.Server.Controllers;
 [ApiController]
 [Route("[controller]")]
 public class WeatherForecastController : ControllerBase
